@@ -1,20 +1,27 @@
+package task;
+
 import java.util.Objects;
 
 public class Task {
-    private final int id;
+    private int id;
     private String title;
     private String description;
     private Status status;
 
-    Task(int id, String title, String description) {
-        this.id = id;
+    public Task(String title, String description) {
         this.title = title;
         this.description = description;
         this.status = Status.NEW;
     }
 
+    public TaskType getType() { return TaskType.TASK; }
+
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -43,7 +50,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "task.Task{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", status=" + status +
